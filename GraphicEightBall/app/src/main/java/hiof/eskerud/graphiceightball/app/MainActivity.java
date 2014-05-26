@@ -24,6 +24,17 @@ public class MainActivity extends Activity {
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    accelerometerReader.getSensorManager().registerListener(accelerometerReader,accelerometerReader.getAccelerometer(),SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        accelerometerReader.getSensorManager().unregisterListener(accelerometerReader);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -34,7 +45,6 @@ public class MainActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         return false;
     }
-
 
 
 }

@@ -15,7 +15,11 @@ import java.util.Random;
 public class AccelerometerReader implements SensorEventListener {
 
     Context context;
+
+
     public SensorManager sensorManager;
+
+
     public Sensor accelerometer;
     public int destiny = 0;
     private long lastUpdate = 0;
@@ -58,7 +62,7 @@ public class AccelerometerReader implements SensorEventListener {
                 }
 
                 lastX = x;
-                lastY = y; 
+                lastY = y;
                 lastZ = z;
             }
         }
@@ -90,4 +94,11 @@ public class AccelerometerReader implements SensorEventListener {
         return lastY;
     }
 
+    public SensorManager getSensorManager() {
+        return sensorManager;
+    }
+
+    public Sensor getAccelerometer() {
+        return accelerometer;
+    }
 }
